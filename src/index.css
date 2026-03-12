@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --primary: #000000;
+  --bg: #ffffff;
+  --text: #1d1d1f;
+  --text-muted: #86868b;
+  --accent: #0066cc;
+  --gray-light: #f5f5f7;
+  --border: rgba(0, 0, 0, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.8);
+}
+
+body.dark {
+  --bg: #000000;
+  --text: #f5f5f7;
+  --text-muted: #a1a1a6;
+  --accent: #0071e3;
+  --gray-light: #1d1d1f;
+  --border: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(0, 0, 0, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#root {
+  width: 100%;
+}
+
+/* REMOVED SCANLINES, NOISE, VIGNETTE */
+
+/* KEYFRAMES */
+@keyframes fu {
+  from {
+    opacity: 0;
+    transform: translateY(38px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.5); }
+  50% { box-shadow: 0 0 0 10px rgba(0, 245, 255, 0); }
+}
+
+@keyframes glitch {
+  0%, 85%, 100% { transform: translate(0); }
+  86% { transform: translate(-4px, 2px); }
+  89% { transform: translate(4px, -2px); }
+  92% { transform: translate(0); }
+}
+
+@keyframes mq {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Global Reveal Classes */
+.r {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.r.v {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* REUSABLE UI ELEMENTS */
+/* REUSABLE UI ELEMENTS */
+.stag {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.sh {
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.sh em {
+  font-style: normal;
+  color: var(--text-muted);
+}
+
+.btn-a {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 400;
+  border-radius: 980px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.btn-fill {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.btn-fill:hover {
+  background: #0077ed;
+  transform: scale(1.02);
+}
+
+.btn-ghost {
+  color: var(--accent);
+}
+
+.btn-ghost:hover {
+  text-decoration: underline;
+}
+
+/* ──────────────────────────────────────────────────────────
+   MOBILE RESPONSIVENESS
+   ────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  nav {
+    padding: 18px 48px !important;
+  }
+  section {
+    padding: 100px 48px !important;
+  }
+}
+
+.mobile-nav {
+  background: var(--bg) !important;
+}
+
+.mobile-nav a {
+  color: var(--text) !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto !important;
+  }
+  section {
+    padding: 80px 24px !important;
+  }
+  nav {
+    padding: 16px 24px !important;
+  }
+  .ex-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .ex-left {
+    position: static !important;
+    margin-bottom: 32px;
+  }
+  .sh {
+    font-size: 32px !important;
+    line-height: 1.2;
+  }
+  #hero {
+    padding: 120px 24px 60px 24px !important;
+    text-align: left;
+    min-height: 80vh !important;
+  }
+  .hero-name {
+    font-size: 56px !important;
+    margin-bottom: 24px !important;
+  }
+  .hero-role {
+    font-size: 18px !important;
+    margin-bottom: 32px !important;
+  }
+  .hero-btns {
+    width: 100%;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+  }
+  .btn-a {
+    width: 100%;
+    padding: 16px 24px !important;
+  }
+  .pjcard {
+    padding: 32px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .sh {
+    font-size: 32px !important;
+  }
+  .hero-name {
+    font-size: 48px !important;
+  }
+  .pjcard .pjtitle {
+    font-size: 24px !important;
+  }
+  .footer {
+    padding: 40px 24px !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center;
+  }
+}

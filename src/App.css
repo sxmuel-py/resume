@@ -1,0 +1,55 @@
+/* Hide native cursor on the app container — custom cursor takes over */
+.app-container {
+  cursor: none;
+}
+
+.app-container a, 
+.app-container button, 
+.app-container [role="button"] {
+  cursor: none;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section container helper */
+.container {
+  width: 100%;
+}
+
+/* ── 3D Tilt Card ─────────────────────────────────────────── */
+/* Applied to skill + project cards via JS mouse tracking     */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.15s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+.tilt-card:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Project card image effects ──────────────────────────── */
+.project-card:hover .project-image {
+  filter: grayscale(0%) contrast(1);
+  transform: scale(1.05);
+}
+.project-card:hover .project-overlay {
+  opacity: 0.2;
+}
+.project-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Social links ─────────────────────────────────────────── */
+.social-link:hover {
+  color: var(--text-primary) !important;
+}
+
+/* ── Framer Motion section reveal helper ─────────────────── */
+.section-reveal {
+  overflow: hidden;
+}

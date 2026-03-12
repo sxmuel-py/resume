@@ -214,6 +214,10 @@ function App() {
         borderTop: "1px solid var(--border)",
       }}>
         <span>© 2026 SAMUEL OLATIDOYE</span>
+        <div style={{ display: "flex", gap: "24px" }}>
+          <a href="https://www.linkedin.com/in/samuel-olatidoye-880279300/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", textDecoration: "none" }}>LINKEDIN</a>
+          <a href="https://github.com/sxmuel-py" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", textDecoration: "none" }}>GITHUB</a>
+        </div>
         <span>SOFTWARE DEVELOPER · CYBERSECURITY SPECIALIST</span>
       </footer>
     </div>

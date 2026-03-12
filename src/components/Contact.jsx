@@ -51,6 +51,12 @@ const Contact = () => {
           className="btn-a btn-fill"
         >GitHub ↗</a>
         <a
+          href="https://www.linkedin.com/in/samuel-olatidoye-880279300/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-a btn-fill"
+        >LinkedIn ↗</a>
+        <a
           href="/Samuel_Olatidoye_CV.docx"
           download="Samuel_Olatidoye_CV.docx"
           className="btn-a btn-ghost"

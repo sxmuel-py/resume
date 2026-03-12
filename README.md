@@ -67,4 +67,4 @@ src/
 This project is open-source and available under the [MIT License](LICENSE).
 
 ---
-© 2026 Samuel Olatidoye
+© 2026 Enigma Labs · Samuel Olatidoye

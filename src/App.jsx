@@ -1,4 +1,3 @@
-```javascript
 import React, { useState, useEffect, useRef } from "react";
 import "./index.css";
 import Hero from "./components/Hero";
@@ -8,8 +7,8 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import ThemeToggle from "./components/ThemeToggle";
-import Particles from "./components/Particles"; // New import
-import Preloader from "./components/Preloader"; // New import
+import Particles from "./components/Particles";
+import Preloader from "./components/Preloader";
 
 function useActiveSection() {
   const [active, setActive] = useState("hero");
@@ -168,6 +167,8 @@ function App() {
   const activeSection = useActiveSection();
 
   useEffect(() => {
+    if (loading) return; // Wait for loader
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -185,8 +186,13 @@ function App() {
     return () => elements.forEach((el) => io.unobserve(el));
   }, [loading]);
 
+  if (loading) {
+    return <Preloader onComplete={() => setLoading(false)} />;
+  }
+
   return (
     <div className="app-container">
+      <Particles />
       <Nav activeSection={activeSection} />
 
       <main style={{ position: "relative" }}>

@@ -28,13 +28,13 @@ const Contact = () => {
         maxWidth: "900px"
       }}>
         Let's build something<br />
-        <a href="mailto:ixsamuel19@gmail.com" style={{
+        <a href="mailto:contact@samuelolatidoye.space" style={{
           color: "var(--text)",
           textDecoration: "underline",
           textDecorationThickness: "2px",
           textUnderlineOffset: "8px"
         }}>
-          ixsamuel19@gmail.com
+          contact@samuelolatidoye.space
         </a>
       </div>
 
